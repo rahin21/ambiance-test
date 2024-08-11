@@ -9,11 +9,8 @@ async function getData() {
   const res = await fetch(`${process.env.NEXTAUTH_URL}/api/about`, {
     next: { tags: ["about"] },
   });
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
 
   if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
     throw new Error("Failed to fetch data");
   }
 
@@ -24,11 +21,7 @@ async function getGalleryData() {
   const res = await fetch(`${process.env.NEXTAUTH_URL}/api/gallery`, {
     next: { tags: ["gallery"] },
   });
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
-
   if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
     throw new Error("Failed to fetch data");
   }
 
