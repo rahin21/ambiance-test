@@ -2,6 +2,10 @@
   "name": "ambiance",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20.14.0 <22.4.1",
+    "npm": ">=10.7.0 <10.9.1"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
