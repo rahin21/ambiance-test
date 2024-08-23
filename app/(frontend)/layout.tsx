@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import localfont from "next/font/local";
 import image from "/public/og-image.png";
-import "../globals.css";
 import Nav from "@/components/nav";
 import Footer from "@/components/footer";
 import ScrollToTop from "@/components/scrollToTop";
