@@ -1,6 +1,3 @@
-import "@/components/tailAdmin/css/satoshi.css";
-import "@/components/tailAdmin/css/style.css";
-
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -16,5 +13,9 @@ export default function BackendLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return children;
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  );
 }

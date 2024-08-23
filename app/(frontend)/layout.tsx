@@ -50,15 +50,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${dipotic.variable} ${openSans.variable} ${palatino.variable}`}
-      >
-        <Nav />
-        {children}
-        <ScrollToTop />
-        <Footer />
-      </body>
-    </html>
+    <div
+      className={`${dipotic.variable} ${openSans.variable} ${palatino.variable}`}
+    >
+      <Nav />
+      {children}
+      <ScrollToTop />
+      <Footer />
+    </div>
   );
 }
