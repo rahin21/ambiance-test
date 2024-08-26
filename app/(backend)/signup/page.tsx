@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Sign Up",
 };
 
-async function page() {
+async function Page() {
   const user = await getUserData();
 
   if (user && user.length > 0) {
@@ -22,4 +22,4 @@ async function page() {
   }
 }
 
-export default page;
+export default Page;

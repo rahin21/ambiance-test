@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Privacy Information",
 };
 
-async function page() {
+async function Page() {
   const privacy = await getPrivacyData();
   if (!privacy) {
     return <div>Loading...</div>;
@@ -20,4 +20,4 @@ async function page() {
   }
 }
 
-export default page;
+export default Page;

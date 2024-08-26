@@ -4,33 +4,33 @@ import LinkOverLogo from "@/components/linkOverLogo";
 import PaginationControls from "@/components/paginationControl";
 import PortfolioGallery from "@/components/portfolio/portfolioGallery";
 
-
 export const metadata: Metadata = {
   title: "Portfolio",
 };
 
 async function getData() {
-  try { 
-    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/post-key?key=portfolio`,{next:{tags:["posts"]}});
+  try {
+    const res = await fetch(
+      `${process.env.NEXTAUTH_URL}/api/post-key?key=portfolio`,
+      { next: { tags: ["posts"] } }
+    );
     if (!res.ok) {
       throw new Error("Failed to fetch data");
     }
     return res.json();
   } catch (error) {
     console.error("Error fetching data:", error);
-    return null; 
+    return null;
   }
 }
 
-async function page({
+async function Page({
   searchParams,
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
-  
   let portfolio = await getData();
 
-  
   const page = searchParams["page"] ?? "1";
   const per_page = searchParams["per_page"] ?? "6";
   // mocked, skipped and limited in the real app
@@ -62,4 +62,4 @@ async function page({
   );
 }
 
-export default page;
+export default Page;

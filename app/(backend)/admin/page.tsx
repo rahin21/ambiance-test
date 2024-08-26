@@ -10,19 +10,17 @@ export const metadata: Metadata = {
   title: "Admin",
 };
 
-async function page() {
+async function Page() {
   const sliders = await getSliderData();
   const services = await getServiceData();
 
   return (
-    <div >
+    <div>
       <h1 className="text-xl font-semibold text-black capitalize">sliders</h1>
       <div className="sm:grid lg:grid-cols-3 sm:grid-cols-2 gap-7">
         {sliders.map((slider: sliderType) => (
           <div key={slider.id} className="">
-            <SliderInfo
-              slider={slider}
-            />
+            <SliderInfo slider={slider} />
           </div>
         ))}
       </div>
@@ -34,4 +32,4 @@ async function page() {
   );
 }
 
-export default page;
+export default Page;
