@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Portfolio-Private",
 };
 
-function page() {
+function Page() {
   return (
     <div className="container mx-auto">
       <div className=" grid lg:grid-cols-2 px-10 py-10 lg:px-40 text-[16px]">
@@ -30,11 +30,11 @@ function page() {
           </Link>
         </div>
       </div>
-        <div className="grid py-10">
-          <LinkOverLogo link="/contact" linkHeader="CONTACT US" />
-        </div>
+      <div className="grid py-10">
+        <LinkOverLogo link="/contact" linkHeader="CONTACT US" />
+      </div>
     </div>
   );
 }
 
-export default page;
+export default Page;

@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
@@ -11,22 +10,18 @@ export const metadata: Metadata = {
   title: "Login",
 };
 
-
-
-async function page() {
+async function Page() {
   const user = await getUserData();
-  
+
   const session = await getServerSession(authOptions);
-  if(user<1){
-    redirect("/signup")
+  if (user < 1) {
+    redirect("/signup");
   }
   if (!session?.user) {
-    return (
-      <LoginForm/>
-    );
+    return <LoginForm />;
   } else {
     redirect("/admin");
   }
 }
 
-export default page;
+export default Page;

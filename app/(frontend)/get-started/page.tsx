@@ -22,7 +22,7 @@ async function getData() {
   }
 }
 
-async function page() {
+async function Page() {
   const questions = await getData();
   return (
     <div className="container">
@@ -34,4 +34,4 @@ async function page() {
   );
 }
 
-export default page;
+export default Page;

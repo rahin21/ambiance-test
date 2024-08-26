@@ -6,23 +6,21 @@ import ContactImg from "@/components/contact/contactImg";
 import axios from "axios";
 import Slider from "@/components/home/slider";
 
-
 export const metadata: Metadata = {
   title: "Contact",
 };
 
 async function getData() {
   try {
-    
     const res = await fetch(`${process.env.NEXTAUTH_URL}/api/slider/contact`);
     // The return value is *not* serialized
     // You can return Date, Map, Set, etc.
-  
+
     if (!res.ok) {
       // This will activate the closest `error.js` Error Boundary
       throw new Error("Failed to fetch data");
     }
-  
+
     return res.json();
   } catch (error) {
     console.log(error);
@@ -30,12 +28,11 @@ async function getData() {
   }
 }
 
-async function page() {
-
+async function Page() {
   const slider = await getData();
   return (
     <div className="container">
-      <Slider slider={slider}/>
+      <Slider slider={slider} />
       <div className="lg:flex justify-between items-start min-w-[59.6%] gap-5 pt-3">
         <ContactBox />
         <Form />
@@ -44,4 +41,4 @@ async function page() {
   );
 }
 
-export default page;
+export default Page;
