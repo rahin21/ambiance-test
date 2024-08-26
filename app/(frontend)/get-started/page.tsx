@@ -6,30 +6,30 @@ export const metadata: Metadata = {
   title: "Get Started",
 };
 
-async function getData() {
-  try {
-    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/faq`, {
-      next: { tags: ["faq"] },
-    });
-    if (!res.ok) {
-      throw new Error("Failed to fetch data");
-    }
+// async function getData() {
+//   try {
+//     const res = await fetch(`${process.env.NEXTAUTH_URL}/api/faq`, {
+//       next: { tags: ["faq"] },
+//     });
+//     if (!res.ok) {
+//       throw new Error("Failed to fetch data");
+//     }
 
-    return res.json();
-  } catch (error) {
-    console.log(error);
-    return null;
-  }
-}
+//     return res.json();
+//   } catch (error) {
+//     console.log(error);
+//     return null;
+//   }
+// }
 
 async function Page() {
-  const questions = await getData();
+  // const questions = await getData();
   return (
     <div className="container">
       <h1 className="header font-palatino text-lightText text-[24px] tracking-[5px] text-center py-5">
         F.A.Q
       </h1>
-      <AccordionComponent questions={questions} />
+      {/* <AccordionComponent questions={questions} /> */}
     </div>
   );
 }
